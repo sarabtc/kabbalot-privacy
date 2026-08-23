@@ -1,0 +1,7 @@
+title: מדיניות פרטיות · בחרתי בי
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
+plugins: []
+exclude: [README.md]
