@@ -50,7 +50,7 @@ title: מדיניות פרטיות · בחרתי בי
 - **אין היסטוריית גלישה.** אתרים שלא נקבו בשם בקבלות שלך אינם נמדדים, אינם נשמרים ואינם נספרים. התוסף לא בונה רשימה של איפה היית.
 - **מה שנכתב בשיחה עם אורה לא נשמר ולא נשלח.** ההודעות חיות בחלון הפתוח בלבד, וברגע שסוגרים אותו הן נעלמות. בפיילוט אין מחשב אחר שעונה, וגם אין לאן לשלוח.
 - **אין סנכרון בין מחשבים.** התוסף לא משתמש ב-`chrome.storage.sync`, ולכן הנתונים לא עוברים דרך חשבון הגוגל שלך למכשיר אחר.
-- **אין מכירה ואין שיתוף.** אין למי למכור נתונים שהתוסף מעולם לא שלח לשום מקום.
+- **אין מכירה ואין שיתוף.** בגרסה הזו (0.1.0) התוסף לא שולח שום דבר לשום מקום, ולכן אין נתונים למכור. זו לא רק הבטחה: שער האריזה בודק את זה בכל בנייה, ונכשל אם מתגלה בקוד המופץ קריאת רשת או כתובת חיצונית כלשהי (`docs/packaging.md`, שער 1).
 
 ## 3. למה כל הרשאה נחוצה
 
@@ -141,7 +141,7 @@ title: מדיניות פרטיות · בחרתי בי
 - Small internal markers: the last day accounted for (`lastDay`), whether today's "10 minutes left" notice was already shown for each commitment separately (`warnedOnBy`), whether today's check-in reminder was already sent (`checkinRemindedOn`), and when old records were last swept (`lastPruned`).
 - One record holding the currently active tab's full URL, including anything after the `?`, and the second the timer started from, so the clock knows where it stands. It is rewritten on every tab switch and once a minute, and cleared when she goes idle or unfocuses the browser. If she simply closes the laptop without going idle or switching windows, the last value stays at rest in storage until next time. It is never accumulated into a history and never leaves the device.
 
-**What is never collected:** no account, email, password, name or age; no browsing history (sites outside her chosen list are not measured at all); nothing typed in the in-product chat is stored or transmitted (it lives only in the open popup window and disappears when it closes); no analytics; no third parties; no `chrome.storage.sync`, so nothing travels through a Google account to another device. Nothing is sold or shared, because the extension never sends anything anywhere.
+**What is never collected:** no account, email, password, name or age; no browsing history (sites outside her chosen list are not measured at all); nothing typed in the in-product chat is stored or transmitted (it lives only in the open popup window and disappears when it closes); no analytics; no third parties; no `chrome.storage.sync`, so nothing travels through a Google account to another device. Nothing is sold or shared: in this version (0.1.0), the extension sends nothing anywhere, so there is nothing to sell. This is not just a promise — every build is checked by a packaging gate that fails if any network call or external URL turns up in the shipped code (see `docs/packaging.md`, Gate 1).
 
 **Permissions and why they are required:**
 
