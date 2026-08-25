@@ -62,7 +62,7 @@ title: מדיניות פרטיות · בחרתי בי
 | `alarms` | `Chrome` מרדים את התוסף אחרי כחצי דקה של שקט. שעון פנימי מעיר אותו כל דקה כדי לצבור את הזמן, לסגור את היום, ולהראות את מסך העצירה תוך דקה מהרגע שהזמן נגמר. |
 | `idle` | לזהות שקמת מהמחשב אחרי 60 שניות של חוסר פעילות, ולעצור את הספירה. דקות שלא היית שם לא ייספרו נגדך. |
 | `scripting` | `Chrome` מכניס את סקריפט הליווי רק לדפים שנפתחו אחרי ההתקנה. ההרשאה הזאת מאפשרת להיכנס גם ללשוניות שכבר היו פתוחות ברגע ההתקנה או העדכון, כדי שהדף שישבת עליו בדיוק אז לא יישאר נקודה עיוורת. |
-| `notifications` | הודעות קטנות מהתוסף עצמו: כשעמדת ב"קבלה של עכשיו", כשנשארו כעשר דקות בקבלת מכסה יומית, ותזכורת צ׳ק-אין אחת ביום בשעה שבחרת. אף אחת מהן לא מופיעה בשבת או בשעות שקטות שהגדרת — אם השעה שבחרת לתזכורת חלה בהן, ההתראה נדחית לרגע שהן נגמרות, ולא נשלחת בלי שתדעי בזמן שלא ביקשת. ההודעות נוצרות במחשב שלך ולא עוברות דרך שום שירות. |
+| `notifications` | הודעות קטנות מהתוסף עצמו: כשעמדת ב"קבלה של עכשיו", כשנשארו כעשר דקות בקבלת מכסה יומית, ותזכורת צ׳ק-אין אחת ביום בשעה שבחרת. אף אחת מהן לא מופיעה מהשעה שקבעת ביום שישי ועד מוצאי שבת, ולא בשעות שקטות שהגדרת. אם השעה שבחרת לתזכורת חלה בתוכן, ההתראה נדחית לרגע הראשון שבו הן נגמרות **באותו יום**, ולא נשלחת בלי שתדעי בזמן שלא ביקשת. **ביום שישי בדרך כלל אין רגע כזה, ולכן תזכורת הצ׳ק-אין של יום שישי לא נשלחת בכלל:** אי אפשר לבחור תזכורת מוקדמת מ-17:00, וברירת המחדל של יום שישי מתחילה כבר ב-15:00. אם תקבעי ליום שישי שעה מאוחרת יותר, התזכורת של אותו יום נשלחת כרגיל. ההודעות נוצרות במחשב שלך ולא עוברות דרך שום שירות. |
 
 ### ההרשאה לכל האתרים, `https://*/*` ו-`http://*/*`
 
@@ -151,7 +151,7 @@ title: מדיניות פרטיות · בחרתי בי
 | `alarms` | Chrome suspends the service worker after about 30 seconds. A one-minute alarm wakes it to accumulate time, settle the day, and show the stop screen within a minute of the limit being reached. |
 | `idle` | Detect 60 seconds of inactivity and stop counting, so time away from the machine is not counted against her. |
 | `scripting` | Chrome only injects content scripts into pages loaded after install. This lets the extension reach tabs that were already open at install or update time, so the page she was already sitting on is not a blind spot. |
-| `notifications` | Local, self-generated notifications: when a mini-commitment is kept, when about ten minutes are left on a daily-quota commitment, and one daily check-in reminder at the hour she picked. None of these appear during Shabbat or during quiet hours she configured — if her chosen reminder hour falls inside either, it is delayed until they end rather than sent unasked or silently dropped. Created on the device, passing through no service. |
+| `notifications` | Local, self-generated notifications: when a mini-commitment is kept, when about ten minutes are left on a daily-quota commitment, and one daily check-in reminder at the hour she picked. None of these appear between the Friday hour and the motzash hour she sets herself, or during quiet hours she configured. If her chosen reminder hour falls inside either, the notification is delayed to the first moment they end **on that same day**, rather than sent unasked. **On Friday there is normally no such moment, so Friday's check-in reminder is not sent at all:** the earliest reminder hour that can be chosen is 17:00, and the default Friday hour already begins at 15:00. Setting a later Friday hour restores it. Created on the device, passing through no service. |
 
 **Host permissions, `https://*/*` and `http://*/*`.** This is the broad one, and here is the full account of it.
 
