@@ -1,13 +1,8 @@
----
-layout: default
-title: מדיניות פרטיות · בחרתי בי
----
-
 <div dir="rtl" markdown="1">
 
 # מדיניות פרטיות, תוסף "בחרתי בי"
 
-**עודכן לאחרונה: 18.8.2026 · גרסת תוסף 0.1.0**
+**עודכן לאחרונה: 23.8.2026 · גרסת תוסף 0.1.0**
 
 ## בקצרה
 
@@ -47,7 +42,7 @@ title: מדיניות פרטיות · בחרתי בי
 - **אין שרת.** אין בתוסף שום פנייה לאינטרנט, ולכן אין לאן לשלוח. אין כתובת בצד השני.
 - **אין קוד מרוחק.** כל הקוד שרץ ארוז בתוך התוסף ונבדק על ידי חנות כרום. התוסף לא מוריד ולא מריץ קוד מהאינטרנט, וזה גם אסור בכללי החנות.
 - **אין כלי מדידה ואין צד שלישי.** לא `Google Analytics`, לא פרסומות, לא ספריות חיצוניות, לא כלים שסופרים משתמשים.
-- **אין היסטוריית גלישה.** אתרים שלא נקבו בשם בקבלות שלך אינם נמדדים, אינם נשמרים ואינם נספרים. התוסף לא בונה רשימה של איפה היית.
+- **אין היסטוריית גלישה.** אתרים שלא נקבו בשם בקבלות שלך אינם נספרים, אינם מוצגים ואינם נשמרים — לעולם. התוסף לא בונה רשימה של איפה היית. יוצא דופן אחד, בבחירה שלך בלבד: בהגדרה הראשונה יש קישור קטן, "לא בטוחה? אפשר לבדוק את זה יחד." אם לחצת עליו ואישרת ל-`Chrome`, התוסף קורא פעם אחת, בזיכרון בלבד, את ההיסטוריה של עד 30 הימים האחרונים (לפעמים פחות — סעיף 3), מחשב ממנה הערכה של דקות ביום באתרים שבחרת (רק אם היו שם מספיק ביקורים על פני מספיק ימים שונים — גם זה בסעיף 3), ומשחרר את ההרשאה מיד. הקריאה הזאת בודקת גם מתי הגעת לאתרים שלא נקבעו בשם — לא כדי לספור אותם, אלא כי רגע ההגעה אליהם הוא מה שמלמד את התוסף מתי נגמר הביקור באתר שכן נקבע בשם. שום אתר שלא נקבע בשם לא נספר, מוצג או נשמר בשום שלב. ההיסטוריה עצמה לא נשמרת ולא נשלחת; רק המספר, ורק אם אישרת אותו, נכנס לקבלה, כאילו סובבת את הגלגל בעצמך. הפירוט בסעיף 3.
 - **מה שנכתב בשיחה עם אורה לא נשמר ולא נשלח.** ההודעות חיות בחלון הפתוח בלבד, וברגע שסוגרים אותו הן נעלמות. בפיילוט אין מחשב אחר שעונה, וגם אין לאן לשלוח.
 - **אין סנכרון בין מחשבים.** התוסף לא משתמש ב-`chrome.storage.sync`, ולכן הנתונים לא עוברים דרך חשבון הגוגל שלך למכשיר אחר.
 - **אין מכירה ואין שיתוף.** בגרסה הזו (0.1.0) התוסף לא שולח שום דבר לשום מקום, ולכן אין נתונים למכור. זו לא רק הבטחה: שער האריזה בודק את זה בכל בנייה, ונכשל אם מתגלה בקוד המופץ קריאת רשת או כתובת חיצונית כלשהי (`docs/packaging.md`, שער 1).
@@ -64,11 +59,19 @@ title: מדיניות פרטיות · בחרתי בי
 | `scripting` | `Chrome` מכניס את סקריפט הליווי רק לדפים שנפתחו אחרי ההתקנה. ההרשאה הזאת מאפשרת להיכנס גם ללשוניות שכבר היו פתוחות ברגע ההתקנה או העדכון, כדי שהדף שישבת עליו בדיוק אז לא יישאר נקודה עיוורת. |
 | `notifications` | הודעות קטנות מהתוסף עצמו: כשעמדת ב"קבלה של עכשיו", כשנשארו כעשר דקות בקבלת מכסה יומית, ותזכורת צ׳ק-אין אחת ביום בשעה שבחרת. אף אחת מהן לא מופיעה מהשעה שקבעת ביום שישי ועד מוצאי שבת, ולא בשעות שקטות שהגדרת. אם השעה שבחרת לתזכורת חלה בתוכן, ההתראה נדחית לרגע הראשון שבו הן נגמרות **באותו יום**, ולא נשלחת בלי שתדעי בזמן שלא ביקשת. **ביום שישי בדרך כלל אין רגע כזה, ולכן תזכורת הצ׳ק-אין של יום שישי לא נשלחת בכלל:** אי אפשר לבחור תזכורת מוקדמת מ-17:00, וברירת המחדל של יום שישי מתחילה כבר ב-15:00. אם תקבעי ליום שישי שעה מאוחרת יותר, התזכורת של אותו יום נשלחת כרגיל. ההודעות נוצרות במחשב שלך ולא עוברות דרך שום שירות. |
 
+### הרשאה אחת שלא במסך ההתקנה
+
+יש הרשאה אחת שלא מופיעה ברשימה שלמעלה ולא במסך ההתקנה. היא מוצהרת בקובץ התוסף כאופציונלית (`optional_permissions`), ולכן `Chrome` מבקש אותה רק ברגע שאת לוחצת על כפתור מסוים בתוסף, ולא לפני.
+
+| הרשאה | למה היא נחוצה |
+|---|---|
+| `history` | בשאלה "כמה זמן את שם ביום?" בהגדרה הראשונה יש קישור קטן: "לא בטוחה? אפשר לבדוק את זה יחד." רק אם לחצת עליו, `Chrome` שואל אותך אם לאפשר לתוסף לקרוא את ההיסטוריה. שימי לב לנוסח של החלון עצמו: כרום מציג לבקשה הזאת תמיד את המשפט הקבוע שלו, "Read and change your browsing history on all signed-in devices." התוסף לא משנה שום היסטוריה ולא קורא ממכשירים אחרים; אלה מילותיו של כרום לכל בקשת `history`, לא תיאור של מה שהתוסף עושה. אם אישרת, התוסף קורא פעם אחת את הביקורים של עד 30 הימים האחרונים — בפרופיל עמוס במיוחד ייתכן שפחות מזה בפועל, כי הקריאה מוגבלת למספר פריטים קבוע ולא לכל ה-30 יום בכל מחיר, בלי שהתוסף מודיע על כך בנפרד. מהביקורים האלה הוא מחשב הערכה של דקות ביום באתרים שבחרת, אבל רק לאתר שביקרת בו בחמישה ימים שונים לפחות בטווח, ושהזמן שנצבר בו מספיק כדי לעגל למעלה מדקה ביום; אם אחד מהתנאים האלה לא מתקיים, התוסף אומר בפירוש "יש ביקורים, אבל לא מספיק כדי להעריך" במקום להעמיד פנים שיש מספיק מידע. הקריאה נעשית בזיכרון בלבד ולוקחת בדרך כלל שניות ספורות; בפרופיל עם היסטוריה עמוסה במיוחד היא עשויה להתארך, אבל היא תמיד קצובה (עד כ-250 קבוצות קריאה עוקבות, עד 20 אתרים בכל קבוצה). היא בודקת גם מתי הגעת לאתרים שלא נקבעו בשם באחת הקבלות שלך — לא כדי לספור אותם, אלא כי רגע ההגעה אליהם הוא מה שמלמד את התוסף מתי נגמר הביקור באתר שכן נקבע בשם. שום אתר שלא נקבע בשם לא נספר, מוצג או נשמר בשום שלב; רק העיתוי של ההגעה אליו נבדק לרגע, בזיכרון, ונשכח. עם סיום הקריאה התוסף מחזיר את ההרשאה מיד, עוד לפני שהמספר מוצג לך; ואם לשונית ההגדרה נסגרת באמצע הקריאה בלי שההרשאה הוחזרה (קריסה, סגירת הדפדפן), בדיקה קצרה בהפעלה הבאה של הדפדפן, או בעדכון התוסף, מוודאת שההרשאה לא נשארת פתוחה בלי סיבה. שום ביקור, כתובת או תאריך לא נכתב לאחסון ולא נשלח לשום מקום. רק המספר, ורק אם אישרת אותו, נכנס לשדה, בדיוק כאילו סובבת את הגלגל בעצמך. אם סירבת, לא קורה כלום, וההערכה שלך מספיקה. המספר שמוצג הוא הערכה ולא מדידה: ההיסטוריה יודעת מתי נכנסת לאתר, לא כמה זמן נשארת בו. |
+
 ### ההרשאה לכל האתרים, `https://*/*` ו-`http://*/*`
 
 זו ההרשאה הרחבה, וזה ההסבר המלא עליה.
 
-ההרשאה הזאת היא גם מה שמאפשר לתוסף לדעת איזו לשונית פתוחה מולך עכשיו ומה הכתובת שלה. בלי זה השעון לא יודע אם הוא בכלל צריך לרוץ, ואי אפשר לשלוח לאותה לשונית את מסך העצירה או את התזכורת. התוסף לא מבקש הרשאה לקרוא את היסטוריית הגלישה שלך, ואין לו אחת: הוא רואה את הדף שפתוח מולך ברגע זה, ולא את רשימת המקומות שהיית בהם.
+ההרשאה הזאת היא גם מה שמאפשר לתוסף לדעת איזו לשונית פתוחה מולך עכשיו ומה הכתובת שלה. בלי זה השעון לא יודע אם הוא בכלל צריך לרוץ, ואי אפשר לשלוח לאותה לשונית את מסך העצירה או את התזכורת. התוסף לא מחזיק הרשאה לקרוא את היסטוריית הגלישה שלך: הוא רואה את הדף שפתוח מולך ברגע זה, ולא את רשימת המקומות שהיית בהם. הרגע היחיד שבו הוא מבקש הרשאה כזאת, בלחיצה שלך בלבד ולזמן קצוב (בדרך כלל שניות ספורות — הפירוט המלא, כולל הגבול העליון, למעלה תחת "הרשאה אחת שלא במסך ההתקנה"), מתואר שם.
 
 את בוחרת את האתרים שלך אחרי ההתקנה, ואת יכולה לשנות אותם בכל יום. אין דרך ב-`Chrome` להגיד מראש "רק האתרים שהיא תבחר מחר", ולכן התוסף מבקש גישה רחבה ומצמצם אותה בעצמו בקוד.
 
@@ -88,7 +91,7 @@ title: מדיניות פרטיות · בחרתי בי
 
 יש שתי דרכים למחוק, וגם דברים שנמחקים לבד.
 
-1. **כפתור האיפוס בתוך התוסף.** בתחתית החלון של התוסף יש כפתור שכתוב עליו **"איפוס (לבדיקות)"**, והוא מוחק את כל האחסון המקומי בבת אחת. שימי לב מתי הוא מופיע: רק כשכבר יש לך קבלה, ורק אחרי שאישרת נפילה אם הייתה כזאת. במסך של הבוקר שאחרי נפילה, ולפני שהגדרת קבלה ראשונה, הכפתור לא על המסך. אין "סל מיחזור" ואין גיבוי, ולכן זו מחיקה סופית.
+1. **כפתור האיפוס בתוך התוסף.** בתחתית החלון של התוסף יש כפתור שכתוב עליו **"התחלה מחדש"**, והוא מוחק את כל האחסון המקומי בבת אחת. שימי לב מתי הוא מופיע: רק כשכבר יש לך קבלה, ורק אחרי שאישרת נפילה אם הייתה כזאת. במסך של הבוקר שאחרי נפילה, ולפני שהגדרת קבלה ראשונה, הכפתור לא על המסך. אין "סל מיחזור" ואין גיבוי, ולכן זו מחיקה סופית.
 2. **הסרת התוסף מ-`Chrome`.** כשמסירים תוסף, `Chrome` מוחק את כל האחסון המקומי שלו. זו הדרך שמוחקת הכל בוודאות, בכל מצב.
 3. **מה שנמחק לבד.** רשומות הזמן היומיות, רשומות ההארכות ורשומות השעות נמחקות אחרי 45 יום, ויומן האירועים שומר רק את 500 האירועים האחרונים.
 
@@ -115,7 +118,6 @@ title: מדיניות פרטיות · בחרתי בי
 
 שאלה, בקשה או משהו שלא ברור בדף הזה: ani.bacharti.bi@gmail.com
 
----
 
 </div>
 
@@ -123,7 +125,7 @@ title: מדיניות פרטיות · בחרתי בי
 
 ## English summary
 
-**Extension:** בחרתי בי ("I Chose Myself"), version 0.1.0. **Last updated: 14 August 2026.**
+**Extension:** בחרתי בי ("I Chose Myself"), version 0.1.0. **Last updated: 23 August 2026.**
 
 **Everything stays on the user's own computer.** The extension has no server, no backend, no account and no sign-up. It contains no network calls of any kind: no `fetch`, no `XMLHttpRequest`, no analytics, no third-party libraries, no telemetry. Fonts and images are bundled inside the extension package, so even those are never fetched. No remotely hosted code is loaded or executed at any point.
 
@@ -141,7 +143,7 @@ title: מדיניות פרטיות · בחרתי בי
 - Small internal markers: the last day accounted for (`lastDay`), whether today's "10 minutes left" notice was already shown for each commitment separately (`warnedOnBy`), whether today's check-in reminder was already sent (`checkinRemindedOn`), and when old records were last swept (`lastPruned`).
 - One record holding the currently active tab's full URL, including anything after the `?`, and the second the timer started from, so the clock knows where it stands. It is rewritten on every tab switch and once a minute, and cleared when she goes idle or unfocuses the browser. If she simply closes the laptop without going idle or switching windows, the last value stays at rest in storage until next time. It is never accumulated into a history and never leaves the device.
 
-**What is never collected:** no account, email, password, name or age; no browsing history (sites outside her chosen list are not measured at all); nothing typed in the in-product chat is stored or transmitted (it lives only in the open popup window and disappears when it closes); no analytics; no third parties; no `chrome.storage.sync`, so nothing travels through a Google account to another device. Nothing is sold or shared: in this version (0.1.0), the extension sends nothing anywhere, so there is nothing to sell. This is not just a promise — every build is checked by a packaging gate that fails if any network call or external URL turns up in the shipped code (see `docs/packaging.md`, Gate 1).
+**What is never collected:** no account, email, password, name or age; no browsing history (sites outside her chosen list are never named, counted, shown or stored — the one exception is hers to trigger, described under "One permission that is not on the install screen" below: a one-time, in-memory read of up to the last 30 days, sometimes fewer, that also glances at when she arrived at OTHER sites, only to know when a visit to a NAMED one ended, and stores and sends nothing about any of it); nothing typed in the in-product chat is stored or transmitted (it lives only in the open popup window and disappears when it closes); no analytics; no third parties; no `chrome.storage.sync`, so nothing travels through a Google account to another device. Nothing is sold or shared: in this version (0.1.0), the extension sends nothing anywhere, so there is nothing to sell. This is not just a promise — every build is checked by a packaging gate that fails if any network call or external URL turns up in the shipped code (see `docs/packaging.md`, Gate 1).
 
 **Permissions and why they are required:**
 
@@ -153,9 +155,15 @@ title: מדיניות פרטיות · בחרתי בי
 | `scripting` | Chrome only injects content scripts into pages loaded after install. This lets the extension reach tabs that were already open at install or update time, so the page she was already sitting on is not a blind spot. |
 | `notifications` | Local, self-generated notifications: when a mini-commitment is kept, when about ten minutes are left on a daily-quota commitment, and one daily check-in reminder at the hour she picked. None of these appear between the Friday hour and the motzash hour she sets herself, or during quiet hours she configured. If her chosen reminder hour falls inside either, the notification is delayed to the first moment they end **on that same day**, rather than sent unasked. **On Friday there is normally no such moment, so Friday's check-in reminder is not sent at all:** the earliest reminder hour that can be chosen is 17:00, and the default Friday hour already begins at 15:00. Setting a later Friday hour restores it. Created on the device, passing through no service. |
 
+**One permission that is not on the install screen.** It is declared in the manifest as optional (`optional_permissions`), so Chrome never shows it at install and only asks for it in response to her own click on one button inside the extension.
+
+| Permission | Why it is needed |
+|---|---|
+| `history` | On the first-setup question "how long are you there per day" there is a small link: "Not sure? Let's check it together." Only if she clicks it does Chrome ask whether to let the extension read her history. Note the wording of the prompt itself: Chrome always shows its own fixed sentence for this request, "Read and change your browsing history on all signed-in devices." The extension never changes any history and never reads from other devices; that is Chrome's standard sentence for any `history` request, not a description of what the extension does. If she allows it, the extension reads up to the last 30 days of visits once — on an unusually busy profile the read is capped by item count rather than by date, so the effective window can quietly be less than 30 days, without a separate notice — and estimates minutes per day on the sites she herself named, but only for a site with visits on at least five distinct days in that window, and only when the time that adds up to is enough to round to at least a minute a day; short of either, it says plainly that visits were found but not enough to estimate from, rather than showing a number it cannot stand behind. The read happens in memory only, and typically finishes in a few seconds — longer, but always bounded (at most roughly 250 sequential batches of up to 20 sites each), on an unusually active history. It also looks at when she arrived at sites she never named, not to count them, but because knowing when she left is how it knows how long a visit to a site she DID name lasted; nothing about an unnamed site — its address, how often, for how long — is ever kept, shown, or written down. No visit, URL or timestamp is ever written to storage or sent anywhere. Only the resulting number, and only if she accepts it, goes into the field, exactly as if she had turned the dial herself. Declining does nothing and leaves the extension fully usable. If the tab is closed or the browser itself closes before the permission is handed back, a brief check at the next browser start (or extension update) confirms it was not left granted by mistake. The number is presented as an estimate, not a measurement: history knows when she arrived on a site, not how long she stayed. |
+
 **Host permissions, `https://*/*` and `http://*/*`.** This is the broad one, and here is the full account of it.
 
-This is also what lets the extension know which tab is in front of her and what its address is: without that the timer cannot tell whether it should be running at all, and the stop screen and the reminder cannot be delivered to that tab. The extension does not request permission to read her browsing history and does not hold one. It sees the page open in front of her right now, not the list of places she has been.
+This is also what lets the extension know which tab is in front of her and what its address is: without that the timer cannot tell whether it should be running at all, and the stop screen and the reminder cannot be delivered to that tab. The extension does not hold permission to read her browsing history. It sees the page open in front of her right now, not the list of places she has been. The one moment it asks for such a permission, on her click only and for a bounded time (typically a few seconds — the full detail, including the upper bound, is above under "One permission that is not on the install screen"), is described there.
 
 The user picks her sites after installation and can change them any day, and Chrome offers no way to declare "only the sites she will choose tomorrow", so the extension requests broad host access and narrows it in its own code.
 
@@ -167,7 +175,7 @@ The extension also serves `fonts/*` and `character/v3/*` to the page from its ow
 
 **Who can see the data.** From the extension itself, only the user: the developer cannot see any of it, because there is nowhere for it to arrive. Anyone with access to her computer and Chrome profile can open the extension and see what it shows, as with anything else in her browser. Separately, pilot feedback is collected through a **Google Form**, which is not part of the extension: it is hosted by Google, and answers she chooses to submit are stored on Google's servers and reach the developer. The extension neither fills it in nor knows it exists, and declining to answer changes nothing about how the extension works.
 
-**Deletion.** A reset button at the bottom of the popup, labelled `איפוס (לבדיקות)`, wipes all local storage at once; it is only rendered once a commitment exists and after any fall has been acknowledged, so it is not on screen before first setup or on the morning-after screen. Uninstalling the extension makes Chrome delete all of its local storage, in every state. Daily time, extension-use and hours records auto-delete after 45 days, and the journal keeps only the last 500 events. Everything else, including the commitments, streaks, achievements, quiet hours, the personal note and the setup draft, persists until reset or uninstall.
+**Deletion.** A reset button at the bottom of the popup, labelled `התחלה מחדש`, wipes all local storage at once; it is only rendered once a commitment exists and after any fall has been acknowledged, so it is not on screen before first setup or on the morning-after screen. Uninstalling the extension makes Chrome delete all of its local storage, in every state. Daily time, extension-use and hours records auto-delete after 45 days, and the journal keeps only the last 500 events. Everything else, including the commitments, streaks, achievements, quiet hours, the personal note and the setup draft, persists until reset or uninstall.
 
 **Children and teens.** Pilot testers include teenage girls. The extension asks for no age and no identifying detail, creates no account, and contains no purchases, ads or external content, and it sends nothing about her to anyone. Two things are stated plainly for them: the pilot's feedback form is hosted by Google, so whatever she chooses to write there is stored by Google and reaches the developer; and a shared computer is a precondition to handle, not only a privacy note: on a shared Chrome profile, anyone using it can open the extension and see her commitments, streaks and personal note, and, more seriously, the extension counts all browsing on that profile, not only hers, so someone else's use can reset her streak on a day she did not break it. A separate Chrome profile, hers alone, fixes both at once, which is why install-guide.md treats it as a condition before installing, not a suggestion. Users under 18 should install it with a parent's knowledge and consent. It is not a parental-control tool: there is no parent dashboard and no report is sent to anyone.
 
