@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>התקנת בחרתי בי</title>
+<!--
+  אין בדף הזה שום משאב חיצוני: אין גופן מגוגל, אין תמונות, אין סקריפט.
+  זה מכוון. הדף הזה קיים בשביל מי שיושבת מאחורי סינון, וכל משאב שמגיע
+  מדומיין אחר הוא עוד דבר שהסינון יכול לחסום, להחליף, או לשנות בדרך.
+-->
+<style>
+  :root{
+    --primary:#7C5CE0; --primary-hover:#6A4BD1; --primary-soft:#EFEAFC;
+    --bg:#F6F2FF; --surface:#FFFFFF; --ink:#2C3153; --muted:#6B6787;
+    --line:#E2DBF5; --pink-soft:#FFE4ED; --pink-ink:#C2437A;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Arial Hebrew',Arial,system-ui,sans-serif;
+    line-height:1.7; padding:28px 18px 64px;
+  }
+  .wrap{max-width:620px;margin:0 auto}
+  h1{font-size:30px;line-height:1.25;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:16px;margin-bottom:26px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;padding:22px;margin-bottom:18px;
+  }
+  .note{background:var(--pink-soft);border:none;color:var(--ink)}
+  .note b{color:var(--pink-ink)}
+  h2{font-size:20px;margin:0 0 10px}
+  p{margin:0 0 12px}
+  a.dl{
+    display:block;text-align:center;background:var(--primary);color:#fff;
+    text-decoration:none;font-size:19px;font-weight:700;
+    padding:18px 24px;border-radius:999px;margin:6px 0 10px;
+  }
+  a.dl:hover{background:var(--primary-hover)}
+  .small{font-size:14px;color:var(--muted);text-align:center}
+  ol{margin:0;padding-inline-start:22px}
+  li{margin-bottom:14px}
+  code{
+    background:var(--primary-soft);padding:2px 7px;border-radius:6px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;
+    direction:ltr;display:inline-block;
+  }
+  .foot{color:var(--muted);font-size:14px;text-align:center;margin-top:26px}
+  .foot a{color:var(--primary)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>התקנת בחרתי בי</h1>
+  <div class="sub">הדף הזה נועד למי שההתקנה מהחנות של כרום לא עבדה אצלה.</div>
+
+  <div class="card note">
+    <p><b>קודם כול: זו לא תקלה אצלך.</b></p>
+    <p>תוכנת הסינון בודקת כל קובץ שעובר דרכה, ותוך כדי היא משנה אותו קצת. כרום מצדו בודק שהקובץ שהגיע אליו הוא בדיוק אותו קובץ שגוגל שלחה, בלי שינוי. השניים סותרים זה את זה, וכרום עוצר.</p>
+    <p>זה קורה לכל מי שיש לה סינון, ואי אפשר לתקן את זה מהצד שלנו. המסלול שבדף הזה עוקף את זה לגמרי, כי הוא לא עובר דרך המנגנון שנשבר.</p>
+  </div>
+
+  <div class="card">
+    <h2>שלב 1: להוריד את הקובץ</h2>
+    <a class="dl" href="bacharti-bi-0.1.2.zip" download>הורדת הקובץ</a>
+    <div class="small">גרסה 0.1.2 · בערך 1.4 מגה · נשמר בתיקיית ההורדות שלך</div>
+  </div>
+
+  <div class="card">
+    <h2>שלב 2: לחלץ אותו</h2>
+    <p>הקובץ שירד הוא תיקייה דחוסה, וצריך לפתוח אותה לפני שמשתמשים בה.</p>
+    <p><b>בווינדוס:</b> לחיצה ימנית על הקובץ, ואז ״חלץ הכל״, ואז ״חלץ״.<br>
+       <b>במק:</b> לחיצה כפולה על הקובץ, וזהו.</p>
+    <p>עכשיו יש לך <b>תיקייה</b> ובתוכה כמה קבצים. אחד מהם נקרא <code>manifest.json</code>. תזכרי את השם הזה, הוא חשוב בשלב 5.</p>
+  </div>
+
+  <div class="card">
+    <h2>שלב 3: לפתוח את עמוד התוספים</h2>
+    <p>בשורת הכתובת של כרום, במקום להקליד אתר, הקלידי <code>chrome://extensions</code> ואז אנטר.</p>
+  </div>
+
+  <div class="card">
+    <h2>שלב 4: להדליק מצב פיתוח</h2>
+    <p>בפינה העליונה של העמוד יש מתג קטן שכתוב לידו ״מצב פיתוח״. הדליקי אותו.</p>
+    <p>השם מפחיד, והוא רק אומר לכרום ״אני מתקינה תוסף שלא הגיע מהחנות״. אחרי שמדליקים אותו מופיעים שלושה כפתורים חדשים למעלה.</p>
+  </div>
+
+  <div class="card">
+    <h2>שלב 5: לטעון את התיקייה</h2>
+    <p>לחצי על ״טעינת פריט לא ארוז״, הכפתור הראשון משמאל. ייפתח חלון של בחירת תיקייה.</p>
+    <p>בחרי את התיקייה שחילצת בשלב 2, <b>זו שבתוכה נמצא הקובץ <code>manifest.json</code></b>, ולחצי ״בחירת תיקייה״.</p>
+    <p>בוחרים את התיקייה עצמה, לא נכנסים לתוכה ולא בוחרים קובץ בודד. אם כרום אומר שהוא לא מוצא את <code>manifest.json</code>, נסי שוב עם התיקייה שבפנים.</p>
+  </div>
+
+  <div class="card">
+    <h2>שלב 6: לנעוץ את האייקון</h2>
+    <p>לחצי על אייקון הפאזל למעלה בכרום, ואז על סימן הנעץ שליד ״בחרתי בי״. ככה הוא יישאר גלוי לך תמיד.</p>
+    <p>חלון ההיכרות נפתח בדרך כלל לבד. אם לא, לחצי על האייקון של התוסף.</p>
+  </div>
+
+  <div class="card">
+    <h2>שני דברים שכדאי לדעת</h2>
+    <p><b>זה בדיוק אותו כלי</b> שבחנות, עם כל התיקונים האחרונים. שום דבר לא חסר בו.</p>
+    <p><b>הוא לא יתעדכן לבד.</b> אם יֵצא תיקון, תקבלי קובץ חדש. עד שנכתוב לך, את לא צריכה לעשות כלום.</p>
+  </div>
+
+  <div class="foot">
+    נתקעת באמצע? כתבי לי ונעבור על זה ביחד.<br>
+    <a href="mailto:ani.bacharti.bi@gmail.com">ani.bacharti.bi@gmail.com</a><br><br>
+    <a href="../">מדיניות הפרטיות</a>
+  </div>
+
+</div>
+</body>
+</html>
